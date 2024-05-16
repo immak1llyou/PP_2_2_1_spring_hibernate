@@ -28,12 +28,12 @@ public class MainApp {
         User user3 = new User("User3", "Lastname3", "user3@mail.ru");
         User user4 = new User("User4", "Lastname4", "user4@mail.ru");
 
-        carService.add(car1);
-        carService.add(car2);
-        carService.add(car3);
-        carService.add(car4);
+        carService.addCar(car1);
+        carService.addCar(car2);
+        carService.addCar(car3);
+        carService.addCar(car4);
 
-        List<Car> cars = carService.listCars();
+        List<Car> cars = carService.getListCars();
         cars.stream().forEach(car -> System.out.println(car));
 
         user1.setCar(car1);
@@ -41,12 +41,12 @@ public class MainApp {
         user3.setCar(car3);
         user4.setCar(car4);
 
-        userService.add(user1);
-        userService.add(user2);
-        userService.add(user3);
-        userService.add(user4);
+        userService.addUser(user1);
+        userService.addUser(user2);
+        userService.addUser(user3);
+        userService.addUser(user4);
 
-        List<User> users = userService.listUsers();
+        List<User> users = userService.getListUsers();
         for (User user : users) {
             System.out.println("Id = " + user.getId());
             System.out.println("First Name = " + user.getFirstName());

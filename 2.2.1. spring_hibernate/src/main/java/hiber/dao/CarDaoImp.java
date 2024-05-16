@@ -15,13 +15,13 @@ public class CarDaoImp implements CarDao {
     private SessionFactory sessionFactory;
 
     @Override
-    public void add(Car Car) {
+    public void addCar(Car Car) {
         sessionFactory.getCurrentSession().save(Car);
     }
 
     @Override
     @SuppressWarnings("unchecked")
-    public List<Car> listCars() {
+    public List<Car> getListCars() {
         List<Car> listCars = sessionFactory.getCurrentSession().createQuery("from Car").getResultList();
         return listCars;
     }
